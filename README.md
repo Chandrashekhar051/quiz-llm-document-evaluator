@@ -39,42 +39,42 @@ This project focuses on building a **complete, explainable, and modular system u
 ## 🔹 System Architecture
 
 
-User Input (PDF)
-↓
-Text Extraction (PyMuPDF)
-↓
-Text Chunking
-↓
-Question Generation (Flan-T5)
-↓
-User Interaction (Streamlit UI)
-↓
-Answer Evaluation (Phi-2 via Ollama)
-↓
-Score + Feedback + Summary
-
+User Input (PDF)             
+↓                                         
+Text Extraction (PyMuPDF)               
+↓                            
+Text Chunking                         
+↓                                    
+Question Generation (Flan-T5)               
+↓                                          
+User Interaction (Streamlit UI)                
+↓                                             
+Answer Evaluation (Phi-2 via Ollama)               
+↓                                               
+Score + Feedback + Summary                   
+                  
 
 ---
 
 ## 🔹 Project Structure
 
 
-quiz-llm-app/
-│
-├── app.py
-├── requirements.txt
-├── README.md
-│
-├── utils/
-│ ├── pdf_reader.py
-│ ├── text_chunker.py
-│
-├── modules/
-│ ├── question_generator.py
-│ ├── answer_evaluator.py
-│
-├── data/
-├── outputs/
+quiz-llm-app/                            
+│                                     
+├── app.py                               
+├── requirements.txt                         
+├── README.md                             
+│                                    
+├── utils/                                
+│ ├── pdf_reader.py                        
+│ ├── text_chunker.py                               
+│                                            
+├── modules/                               
+│ ├── question_generator.py                        
+│ ├── answer_evaluator.py                              
+│                                              
+├── data/                           
+├── outputs/                                
 
 
 ---
