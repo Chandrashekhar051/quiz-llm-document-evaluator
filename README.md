@@ -35,3 +35,59 @@ This project focuses on building a **complete, explainable, and modular system u
 - Torch (CPU-based)
 
 ---
+
+## 🔹 System Architecture
+
+
+User Input (PDF)
+↓
+Text Extraction (PyMuPDF)
+↓
+Text Chunking
+↓
+Question Generation (Flan-T5)
+↓
+User Interaction (Streamlit UI)
+↓
+Answer Evaluation (Phi-2 via Ollama)
+↓
+Score + Feedback + Summary
+
+
+---
+
+## 🔹 Project Structure
+
+
+quiz-llm-app/
+│
+├── app.py
+├── requirements.txt
+├── README.md
+│
+├── utils/
+│ ├── pdf_reader.py
+│ ├── text_chunker.py
+│
+├── modules/
+│ ├── question_generator.py
+│ ├── answer_evaluator.py
+│
+├── data/
+├── outputs/
+
+
+---
+
+## 🔹 Features
+
+- Document upload and processing (PDF)
+- Text extraction from documents
+- Efficient text chunking for LLM processing
+- Automatic question generation from content
+- Interactive quiz interface
+- LLM-based answer evaluation
+- Score calculation and feedback generation
+- Result summary display
+
+---
