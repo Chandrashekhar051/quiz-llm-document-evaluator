@@ -1,0 +1,9 @@
+pandas
+numpy
+nltk
+sentence-transformers
+transformers
+torch
+pymupdf
+scikit-learn
+gradio
