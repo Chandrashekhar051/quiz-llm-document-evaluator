@@ -235,6 +235,17 @@ Based on evaluation:
 * Gradio (UI)
 
 ---
+## ▶️ How to Run
+
+### Option 1: Google Colab
+- Open notebook
+- Run all cells step-by-step
+
+### Option 2: Local Setup
+
+- bash
+- pip install -r requirements.txt
+---
 
 ## 📚 Key Learnings
 
