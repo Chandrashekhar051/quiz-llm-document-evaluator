@@ -1,0 +1,17 @@
+Q#,Question,Your Answer,Reference,Score/10,Grade,Semantic%,Keyword%,Feedback
+1,What are command interpreters used for?,"A command interpreter, often referred to as a shell, terminal, or command-line interface (CLI), is a software component that reads, interprets, and executes commands entered by a user or from a script. It acts as an interface between the user and the operating system (OS) kernel.",• Command Interpreters are used to give commands to the OS.,5.84,Partial,68.3,40.0,Good understanding. Try to be more specific.
+2,What are the three types of storage management?,"n operating systems, the three primary types of storage management are Primary/Main Memory Management (RAM), Secondary Storage Management (disk/SSD, including file systems), and Cache Memory Management. ","There are three types of storage management
+File system management
+Mass-storage management
+File-System Management
+• File management is one of the most visible components of an operating system.",7.12,Good,82.7,50.0,Excellent! Captures both meaning and key concepts.
+3,What type of clustering is more efficient?,"K-Means clustering is generally considered the most efficient type of clustering for large datasets due to its linear time complexity, 
+
+
+
+, making it fast and scalable","Symmetric clustering – two or more systems are running applications, and are
+monitoring each other.",3.15,Needs Improvement,42.4,11.1,Right direction but missing key terms.
+4,What happens when a process terminates?,"When a process terminates, it finishes execution, and the operating system (OS) reclaims its resources, including freeing physical/virtual memory, closing open file descriptors, and clearing I/O buffers","When the process terminates, the operating system reclaims the
+• The program stored on a disk is a passive entity and the program under execution is an active
+entity.",6.22,Good,68.7,50.0,Good understanding. Try to be more specific.
+5,How is the OS broken down?,An operating system (OS) is broken down into several functional components and architectural layers that allow it to act as an interface between hardware and users/applications.,• The OS is broken into number of layers (levels).,5.77,Partial,56.5,60.0,Good understanding. Try to be more specific.
