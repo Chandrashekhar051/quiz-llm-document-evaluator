@@ -128,6 +128,83 @@ Based on evaluation:
 
 ---
 
+## 🏗️ System Architecture
+
+### 🔹 High-Level Architecture
+
+            ┌──────────────────────────────┐
+            │        User Input            │
+            │  (PDF / TXT / DOCX Upload)   │
+            └─────────────┬────────────────┘
+                          │
+                          ▼
+            ┌──────────────────────────────┐
+            │   Document Ingestion Layer   │
+            │  (PyMuPDF / DOCX / TXT)      │
+            └─────────────┬────────────────┘
+                          │
+                          ▼
+            ┌──────────────────────────────┐
+            │   Text Preprocessing Layer   │
+            │  - Sentence Tokenization     │
+            │  - Cleaning                  │
+            │  - Chunking                  │
+            └─────────────┬────────────────┘
+                          │
+                          ▼
+            ┌──────────────────────────────┐
+            │  Question Generation Module  │
+            │  (T5 LLM - Answer + Context) │
+            └─────────────┬────────────────┘
+                          │
+                          ▼
+            ┌──────────────────────────────┐
+            │     Quiz Session Manager     │
+            │  - Tracks Questions          │
+            │  - Stores Responses          │
+            └─────────────┬────────────────┘
+                          │
+                          ▼
+            ┌──────────────────────────────┐
+            │   Answer Evaluation Module   │
+            │  - Semantic Similarity       │
+            │  - Keyword Matching          │
+            └─────────────┬────────────────┘
+                          │
+                          ▼
+            ┌──────────────────────────────┐
+            │     Feedback Generation      │
+            │  - Score                     │
+            │  - Suggestions               │
+            └─────────────┬────────────────┘
+                          │
+                          ▼
+            ┌──────────────────────────────┐
+            │       Result Summary         │
+            │  - Performance Metrics       │
+            │  - CSV Export                │
+            └──────────────────────────────┘
+
+            
+---
+
+### 🔄 Data Flow Explanation
+
+1. User uploads a document  
+2. System extracts raw text  
+3. Text is split into meaningful chunks  
+4. Each chunk is used to:
+   - extract a key answer  
+   - generate a question using LLM  
+5. User answers the question  
+6. Answer is evaluated using:
+   - semantic similarity (embedding-based)  
+   - keyword overlap  
+7. System generates feedback  
+8. Final results are summarized and exported  
+
+---
+
 ## 🔄 Iterations & Improvements
 
 ### ❌ Attempt 1: Direct Question Generation
@@ -233,6 +310,37 @@ Based on evaluation:
 * SentenceTransformers (embeddings)
 * HuggingFace Transformers (LLM)
 * Gradio (UI)
+
+---
+## 📂 Project Structure
+
+quiz-llm-document-evaluator/
+│
+├── app/
+│ └── app.py # Main Gradio application
+│
+├── modules/
+│ ├── document_ingester.py # Document extraction & chunking
+│ ├── question_generator.py # LLM-based question generation
+│ ├── answer_evaluator.py # Semantic + keyword scoring
+│ ├── quiz_session.py # Quiz flow management
+│
+├── utils/
+│ ├── handlers.py # Event handling logic
+│ └── html_templates.py # UI rendering templates
+│
+├── notebooks/
+│ └── Quiz_App_AI_Internship.ipynb # Full Colab implementation
+│
+├── outputs/
+│ ├── quiz_results.csv # Exported quiz results
+│ ├── Final_Summary.png # Result summary UI
+│ ├── QG_from_uploaded_pdf.png # Question generation output
+│ └── web_interface_of_quiz_app.png # UI screenshot
+│
+├── README.md # Project documentation
+├── requirements.txt # Dependencies
+└── .gitignore
 
 ---
 ## ▶️ How to Run
