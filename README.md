@@ -132,58 +132,58 @@ Based on evaluation:
 
 ### 🔹 High-Level Architecture
 
-            ┌──────────────────────────────┐
-            │        User Input            │
-            │  (PDF / TXT / DOCX Upload)   │
-            └─────────────┬────────────────┘
-                          │
-                          ▼
-            ┌──────────────────────────────┐
-            │   Document Ingestion Layer   │
-            │  (PyMuPDF / DOCX / TXT)      │
-            └─────────────┬────────────────┘
-                          │
-                          ▼
-            ┌──────────────────────────────┐
-            │   Text Preprocessing Layer   │
-            │  - Sentence Tokenization     │
-            │  - Cleaning                  │
-            │  - Chunking                  │
-            └─────────────┬────────────────┘
-                          │
-                          ▼
-            ┌──────────────────────────────┐
-            │  Question Generation Module  │
-            │  (T5 LLM - Answer + Context) │
-            └─────────────┬────────────────┘
-                          │
-                          ▼
-            ┌──────────────────────────────┐
-            │     Quiz Session Manager     │
-            │  - Tracks Questions          │
-            │  - Stores Responses          │
-            └─────────────┬────────────────┘
-                          │
-                          ▼
-            ┌──────────────────────────────┐
-            │   Answer Evaluation Module   │
-            │  - Semantic Similarity       │
-            │  - Keyword Matching          │
-            └─────────────┬────────────────┘
-                          │
-                          ▼
-            ┌──────────────────────────────┐
-            │     Feedback Generation      │
-            │  - Score                     │
-            │  - Suggestions               │
-            └─────────────┬────────────────┘
-                          │
-                          ▼
-            ┌──────────────────────────────┐
-            │       Result Summary         │
-            │  - Performance Metrics       │
-            │  - CSV Export                │
-            └──────────────────────────────┘
+        ┌──────────────────────────────┐
+        │        User Input            │
+        │  (PDF / TXT / DOCX Upload)   │
+        └─────────────┬────────────────┘
+                      │
+                      ▼
+        ┌──────────────────────────────┐
+        │   Document Ingestion Layer   │
+        │  (PyMuPDF / DOCX / TXT)      │
+        └─────────────┬────────────────┘
+                      │
+                      ▼
+        ┌──────────────────────────────┐
+        │   Text Preprocessing Layer   │
+        │  - Sentence Tokenization     │
+        │  - Cleaning                  │
+        │  - Chunking                  │
+        └─────────────┬────────────────┘
+                      │
+                      ▼
+        ┌──────────────────────────────┐
+        │  Question Generation Module  │
+        │  (T5 LLM - Answer + Context) │
+        └─────────────┬────────────────┘
+                      │
+                      ▼
+        ┌──────────────────────────────┐
+        │     Quiz Session Manager     │
+        │  - Tracks Questions          │
+        │  - Stores Responses          │
+        └─────────────┬────────────────┘
+                      │
+                      ▼
+        ┌──────────────────────────────┐
+        │   Answer Evaluation Module   │
+        │  - Semantic Similarity       │
+        │  - Keyword Matching          │
+        └─────────────┬────────────────┘
+                      │
+                      ▼
+        ┌──────────────────────────────┐
+        │     Feedback Generation      │
+        │  - Score                     │
+        │  - Suggestions               │
+        └─────────────┬────────────────┘
+                      │
+                      ▼
+        ┌──────────────────────────────┐
+        │       Result Summary         │
+        │  - Performance Metrics       │
+        │  - CSV Export                │
+        └──────────────────────────────┘
 
             
 ---
@@ -314,35 +314,36 @@ Based on evaluation:
 ---
 ## 📂 Project Structure
 
-quiz-llm-document-evaluator/
-│
-├── app/
-│ └── app.py # Main Gradio application
-│
-├── modules/
-│ ├── document_ingester.py # Document extraction & chunking
-│ ├── question_generator.py # LLM-based question generation
-│ ├── answer_evaluator.py # Semantic + keyword scoring
-│ ├── quiz_session.py # Quiz flow management
-│
-├── utils/
-│ ├── handlers.py # Event handling logic
-│ └── html_templates.py # UI rendering templates
-│
-├── notebooks/
-│ └── Quiz_App_AI_Internship.ipynb # Full Colab implementation
-│
-├── outputs/
-│ ├── quiz_results.csv # Exported quiz results
-│ ├── Final_Summary.png # Result summary UI
-│ ├── QG_from_uploaded_pdf.png # Question generation output
-│ └── web_interface_of_quiz_app.png # UI screenshot
-│
-├── README.md # Project documentation
-├── requirements.txt # Dependencies
-└── .gitignore
-
+quiz-llm-document-evaluator/                  
+│                                                 
+├── app/                                                          
+│ └── app.py # Main Gradio application                         
+│                                             
+├── modules/                                                          
+│ ├── document_ingester.py # Document extraction & chunking                  
+│ ├── question_generator.py # LLM-based question generation                 
+│ ├── answer_evaluator.py # Semantic + keyword scoring               
+│ ├── quiz_session.py # Quiz flow management                                  
+│                                                                 
+├── utils/                                                             
+│ ├── handlers.py # Event handling logic                          
+│ └── html_templates.py # UI rendering templates                         
+│                                                                      
+├── notebooks/                                                            
+│ └── Quiz_App_AI_Internship.ipynb # Full Colab implementation               
+│                                                                    
+├── outputs/                                                            
+│ ├── quiz_results.csv # Exported quiz results                      
+│ ├── Final_Summary.png # Result summary UI                                
+│ ├── QG_from_uploaded_pdf.png # Question generation output                      
+│ └── web_interface_of_quiz_app.png # UI screenshot                          
+│                                                                 
+├── README.md # Project documentation                                  
+├── requirements.txt # Dependencies                                  
+└── .gitignore                                                            
+                                            
 ---
+
 ## ▶️ How to Run
 
 ### Option 1: Google Colab
@@ -351,8 +352,10 @@ quiz-llm-document-evaluator/
 
 ### Option 2: Local Setup
 
-- bash
-- pip install -r requirements.txt
+```bash
+pip install -r requirements.txt
+python app/app.py
+```
 ---
 
 ## 📚 Key Learnings
