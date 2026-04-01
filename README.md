@@ -381,3 +381,8 @@ python app/app.py
 ## 👨‍💻 Author
 
 Chandrashekhar Mannur
+
+---
+## Project Demonstration Video Link
+
+https://drive.google.com/file/d/1eviUsCQuYqEx6ChSk0yZP2jTHSuK7M5t/view?usp=sharing
